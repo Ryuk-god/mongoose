@@ -7,6 +7,6 @@ const Database_URL= process.env.Database_URL || 'mongodb://127.0.0.1:27017/movie
 
 connectDB(Database_URL);
 
-allDoc();
+allDoc('6a79c8822d8b85b0320b71fd');
 
 app.listen(port ,()=>console.log(`Server listening on port ${port}`));
