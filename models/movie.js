@@ -124,9 +124,12 @@ const allDoc=async ()=>{
     // const result = await MovieModel.find( {$and: [{money:45000},{ratings:5},]}); // and use if these possible condition is available
     // const result = await MovieModel.find( {$or: [{money:45000},{ratings:5},]}); // or use if these possible condition is available
 
+    //update
     // const result = await MovieModel.updateOne({_id:id},{name:"Interstellar"}); // update one by id
+    // const result =await MovieModel.updateMany({ratings:4},{ratings:3}); // multiple update
 
-    const result =await MovieModel.updateMany({rating:4},{ratings:3});
+    // delete
+    const result =await MovieModel.findByIdAndDelete({_id:"6a79c8822d8b85b0320b71fc"})
     console.log(result);
   } catch (error) {
     console.log(error);
