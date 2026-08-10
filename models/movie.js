@@ -110,7 +110,12 @@ const allDoc=async ()=>{
 
       // single doc 
     // const result=await MovieModel.findById("6a79c8822d8b85b0320b71fc","name");// only want name
-    const result=await MovieModel.findById("6a79c8822d8b85b0320b71fc","ratings"); // only want rating
+    // const result=await MovieModel.findById("6a79c8822d8b85b0320b71fc","ratings"); // only want rating
+    // console.log(result);
+
+
+    // now use limit,skip,count 
+    const result=await MovieModel.find().limit(2);
     console.log(result);
   } catch (error) {
     console.log(error);
