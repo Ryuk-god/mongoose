@@ -115,10 +115,37 @@ const allDoc=async ()=>{
 
 
     // now use limit,skip,count 
-    const result=await MovieModel.find().limit(2);
+    // const result=await MovieModel.find().limit(2); // only give two element
+    // const result = await MovieModel.find().skip(3);// skip three movie form the data base
+    const result = await MovieModel.find().countDocuments(); //count how many doc are present into the data
     console.log(result);
   } catch (error) {
     console.log(error);
   }
 }
 export {allDoc};
+
+
+// for remove the duplicate form the data base
+// const removeDuplicates = async () => {
+//   try {
+//     const movies = await MovieModel.find();
+
+//     const seen = new Set();
+
+//     for (const movie of movies) {
+//       if (seen.has(movie.name)) {
+//         await MovieModel.deleteOne({ _id: movie._id });
+//       } else {
+//         seen.add(movie.name);
+//       }
+//     }
+
+//     console.log("Duplicates removed");
+
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// export { removeDuplicates };
