@@ -87,6 +87,7 @@ const m5 = new MovieModel({
     { value: "Good action movie with a great ending." }
   ]
 });
+// const result = await m1.save(); // for only save one 
   const result = await MovieModel.insertMany([m1,m2,m3,m4]);
   console.log(result);
   } catch (error) {
