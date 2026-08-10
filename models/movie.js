@@ -99,7 +99,7 @@ const MovieModel =mongoose.model('Movie',movieSchema);
 
 
 // iterative the data from the doc
-const allDoc=async (id)=>{
+const allDoc=async ()=>{
   try {
 
     // const result = await MovieModel.find();
@@ -124,7 +124,9 @@ const allDoc=async (id)=>{
     // const result = await MovieModel.find( {$and: [{money:45000},{ratings:5},]}); // and use if these possible condition is available
     // const result = await MovieModel.find( {$or: [{money:45000},{ratings:5},]}); // or use if these possible condition is available
 
-    const result = await MovieModel.updateOne({_id:id},{"name":Interstellar});
+    // const result = await MovieModel.updateOne({_id:id},{name:"Interstellar"}); // update one by id
+
+    const result =await MovieModel.updateMany({rating:4},{ratings:3});
     console.log(result);
   } catch (error) {
     console.log(error);
