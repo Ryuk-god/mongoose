@@ -29,6 +29,13 @@ Comment:[{value:{type:String},published:{type:Date,default:Date.now}}],
 });
 
 // creating model
-const movieModel =mongoose.model('Movie',movieSchema);
+const MovieModel =mongoose.model('Movie',movieSchema);
 
-export default movieModel;
+const insertManyDoc = async()=>{
+  try {
+    
+  } catch (error) {
+    console.log("error");
+  }
+} 
+export default MovieModel;
