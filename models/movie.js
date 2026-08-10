@@ -101,11 +101,17 @@ const MovieModel =mongoose.model('Movie',movieSchema);
 // iterative the data from the doc
 const allDoc=async ()=>{
   try {
-    const result = await MovieModel.find();
 
-    result.forEach((movie)=>{
-      console.log(movie.name);
-    })
+    // const result = await MovieModel.find();
+    // result.forEach((movie)=>{
+    //   console.log(movie.name); // all the name in the doc
+    // })
+
+
+      // single doc 
+    // const result=await MovieModel.findById("6a79c8822d8b85b0320b71fc","name");// only want name
+    const result=await MovieModel.findById("6a79c8822d8b85b0320b71fc","ratings"); // only want rating
+    console.log(result);
   } catch (error) {
     console.log(error);
   }
