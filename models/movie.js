@@ -129,7 +129,10 @@ const allDoc=async ()=>{
     // const result =await MovieModel.updateMany({ratings:4},{ratings:3}); // multiple update
 
     // delete
-    const result =await MovieModel.findByIdAndDelete({_id:"6a79c8822d8b85b0320b71fc"})
+    // const result =await MovieModel.findByIdAndDelete("6a79c8822d8b85b0320b71fe") // by id
+    //const result =await MovieModel.findByIdAndDelete({_id:"6a79c8822d8b85b0320b71fe"}) // by id in object
+    // const result = await MovieModel.deleteOne({name:"Interstellar"}); // delete one data 
+    const result = await MovieModel.deleteMany({rating:4});
     console.log(result);
   } catch (error) {
     console.log(error);
