@@ -118,8 +118,12 @@ const allDoc=async ()=>{
     // const result=await MovieModel.find().limit(2); // only give two element
     // const result = await MovieModel.find().skip(3);// skip three movie form the data base
     // const result = await MovieModel.find().countDocuments(); //count how many doc are present into the data
-    // const result = await MovieModel.find().sort({name:-1}); // asscending order
-    const result = await MovieModel.find().sort({name:1}); // descending  order
+    // const result = await MovieModel.find().sort({name:-1}); // ascending order
+    // const result = await MovieModel.find({money:{$gt:30000}}); // greater then these money   order
+    // const result = await MovieModel.find({money:{$lt:45000}}); // least then these money   order
+    // const result = await MovieModel.find( {$and: [{money:45000},{ratings:5},]}); // and use if these possible condition is available
+    const result = await MovieModel.find( {$or: [{money:45000},{ratings:5},]}); // or use if these possible condition is available
+
     console.log(result);
   } catch (error) {
     console.log(error);
