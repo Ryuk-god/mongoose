@@ -117,7 +117,9 @@ const allDoc=async ()=>{
     // now use limit,skip,count 
     // const result=await MovieModel.find().limit(2); // only give two element
     // const result = await MovieModel.find().skip(3);// skip three movie form the data base
-    const result = await MovieModel.find().countDocuments(); //count how many doc are present into the data
+    // const result = await MovieModel.find().countDocuments(); //count how many doc are present into the data
+    // const result = await MovieModel.find().sort({name:-1}); // asscending order
+    const result = await MovieModel.find().sort({name:1}); // descending  order
     console.log(result);
   } catch (error) {
     console.log(error);
