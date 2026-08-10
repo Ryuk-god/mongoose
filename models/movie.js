@@ -90,7 +90,7 @@ const m5 = new MovieModel({
   const result = await MovieModel.insertMany([m1,m2,m3,m4,m5]);
   console.log(result);
   } catch (error) {
-    console.log("error");
+    console.log(error);
   }
 } 
 export {insertManyDoc};
