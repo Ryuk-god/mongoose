@@ -102,6 +102,10 @@ const MovieModel =mongoose.model('Movie',movieSchema);
 const allDoc=async ()=>{
   try {
     const result = await MovieModel.find();
+
+    result.forEach((movie)=>{
+      console.log(movie.name);
+    })
   } catch (error) {
     console.log(error);
   }
